@@ -1,0 +1,10 @@
+de
+clear
+add Musics/
+player-stop
+add -p Musics/
+player-prev-album
+clear 
+add .
+help
+colorscheme amazon
