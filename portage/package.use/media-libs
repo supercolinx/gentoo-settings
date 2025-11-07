@@ -1,0 +1,7 @@
+media-libs/libvpx postproc
+media-libs/harfbuzz icu
+media-libs/lcms jpeg tiff
+media-libs/imlib2 mp3 raw svg
+media-libs/libsdl2 opengl
+media-libs/freetype fontforge
+media-libs/sdl-sound flac modplug speex vorbis
