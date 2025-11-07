@@ -1,0 +1,57 @@
+filetype plugin on
+filetype indent on
+
+set colorcolumn=80
+set relativenumber
+set previewpopup=height:10,width:60
+set background=dark
+colorscheme habamax
+syntax on
+
+if has("cscope")
+	set csprg=/usr/bin/cscope
+	set csto=0
+	set cst
+	set nocsverb
+	" add any database in current directory
+	if filereadable("cscope.out")
+	    cs add cscope.out
+	" else add database pointed to by environment
+	elseif $CSCOPE_DB != ""
+	    cs add $CSCOPE_DB
+	endif
+	set csverb
+	set csre
+
+	nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+	nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+	nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>a :cs find a <C-R>=expand("<cword>")<CR><CR>
+endif
+
+autocmd BufNewFile *.c,*.cpp,*.h,*.sh exec ":call SetCopyright()"
+function SetCopyright()
+	let l:line = line(".")
+	if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'h'
+		call append(l:line-1,	"/**")
+		call append(l:line,	" * @file\t".expand("%:p:t"))
+		call append(l:line+1,	" * @author\tColin X")
+		call append(l:line+2,	" * @date\t".strftime("%c"))
+		call append(l:line+3,	" * @description:")
+		call append(l:line+4,	" */")
+	elseif &filetype == 'sh'
+		call append(l:line-1,	"#!/bin/sh")
+		call append(l:line,	"# @file\t\t".expand("%:p:t"))
+		call append(l:line+1,	"# @author\tColin X")
+		call append(l:line+2,	"# @data\t\t".strftime("%c"))
+		call append(l:line+3,	"# @description:")
+	endif
+	normal G
+endfunction
+
+nnoremap <Space>vm :e /etc/vim/vimrc.local<CR>

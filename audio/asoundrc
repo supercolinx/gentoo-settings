@@ -1,0 +1,14 @@
+# Nvidia DP
+#defaults.pcm.!card 1
+#defaults.pcm.!device 3
+#defaults.ctl.!card 1
+
+# Intel PCH
+#defaults.pcm.!card 0
+#defaults.pcm.!device 0
+#defaults.ctl.!card 0
+ 
+# USB Y360
+defaults.pcm.!card 2
+defaults.pcm.!device 0
+defaults.ctl.!card 2

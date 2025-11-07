@@ -1,0 +1,78 @@
+*termName:xterm-256color
+*faceName:monospace:style=Regular:antialias=true
+*faceSize:15
+*renderFont:true
+*omitTranslation:popup-menu
+*highlightReverse:false
+!*scaleHeight:1.01
+*scrollBar:false
+*selectToClipboard:true
+*geometry:91x24
+*locale:true
+*saveLines:4096
+
+!Theme Nine
+*background:#181818
+*foreground:#d8d8d8
+*color0:rgb:00/00/00
+*color1:rgb:9e/18/28
+*color2:rgb:00/88/00
+*color3:rgb:96/8a/38
+*color4:rgb:41/41/71
+*color5:rgb:96/3c/59
+*color6:rgb:41/81/79
+*color7:rgb:be/be/be
+*color8:rgb:66/66/66
+*color9:rgb:cf/61/71
+*color10:rgb:7c/bc/8c
+*color11:rgb:ff/f7/96
+*color12:rgb:41/86/be
+*color13:rgb:cf/9e/be
+*color14:rgb:71/be/be
+*color15:rgb:ff/ff/ff
+*cursorColor:#d8d8d8
+
+!Theme Alacritty
+!Normal: black,red,green,yellow,blue,megenta,cyan,white
+!Bright: black,red,green,yellow,blue,megenta,cyan,white
+!Dim: black,red,green,yellow,blue,megenta,cyan,white
+!*background:#181818
+!*foreground:#d8d8d8
+! Normal
+!*color0:#181818
+!*color1:#ac4242
+!*color2:#ac4242
+!*color3:#ac4242
+!*color4:#6a9fb5
+!*color5:#aa759f
+!*color6:#75b5aa
+!*color7:#d8d8d8
+! Bright
+!*color8:#6b6b6b
+!*color9:#c55555
+!*color10:#aac474
+!*color11:#feca88
+!*color12:#82b8c8
+!*color13:#c28cb8
+!*color14:#93d3c3
+!*color15:#f8f8f8
+! Dim
+!*color8:#0f0f0f
+!*color9:#712b2b
+!*color10:#5f6f3a
+!*color11:#a17e4d
+!*color12:#456877
+!*color13:#704d68
+!*color14:#4d7770
+!*color15:#8e8e8e
+!*cursorColor:#d8d8d8
+
+Xcursor.theme:Adwaita
+Xcursor.size:16
+
+!Xft.dpi:144
+Xft.lcd:lcddefault
+Xft.antialias:true
+Xft.hinting:true
+Xft.rgba:rgb
+Xft.hintstyle:hintmedium

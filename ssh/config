@@ -1,0 +1,17 @@
+Host ubuntu-laptop
+	HostName 192.168.0.11
+	User xklsm
+	Port 22
+	IdentityFile ~/.ssh/id_ed25519
+
+Host qemu-ubuntu
+	HostName 127.0.0.1
+	User xklsm
+	Port 2222
+	IdentityFile ~/.ssh/id_ed25519
+
+Host qemu-archlinux
+	HostName 127.0.0.1
+	User root
+	Port 2223
+	IdentityFile ~/.ssh/id_ed25519
