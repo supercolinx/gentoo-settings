@@ -3,7 +3,9 @@
 # @author	Colin X
 # @data		Fri Nov  7 22:32:20 2025
 # @description: USE="nvenc" ffmpeg
-OUTPUT="ffmpeg_$(date +%Y%m%d_%H%M%S).mp4"
+
+mkdir -p $HOME/Videos/screencast
+OUTPUT="$HOME/Videos/screencast/ffmpeg_$(date +%Y%m%d_%H%M%S).mp4"
 
 #ffmpeg \
 #	-hwaccel cuda \			# 启用cuda硬件加速解码
@@ -14,7 +16,7 @@ OUTPUT="ffmpeg_$(date +%Y%m%d_%H%M%S).mp4"
 #	-framerate 60 \			# 设置录制帧率
 #	-i :0.0+0,0 \			# 指定输入源和位置
 #	-f alsa \			# 指定音频输入格式为ALSA
-#	-ac 6 \				# 设置音频声道数(1,2,6)
+#	-ac 2 \				# 设置音频声道数(1,2,6)
 #	-ar 48000 \			# 设置音频采样率(44100,48000,96000)
 #	-i default \			# 指定音频设备
 #	-c:v h264_nvenc \		# ffmpeg -encoders | grep nvenc
@@ -27,10 +29,9 @@ OUTPUT="ffmpeg_$(date +%Y%m%d_%H%M%S).mp4"
 #	-level 5.1 \		# 设置H.264级别(4.0, 4.1, 5.0, 5.1)
 #	-c:a aac \		# 音频编码器(mp3, opus, flac)
 #	-b:a 320k \		# 设置音频码率(96, 128, 192, 320)
-#	-ac 6 \			# 输出音频声道数
+#	-ac 2 \			# 输出音频声道数
 #	-movflags +faststart \	# 优化MP4文件用于网络流媒体, 允许视频在完全下载前开始播放
 #	-fflags +genpts \	# 生成缺失的PTS(呈现时间戳)
-#	-vsync 1 \		# 视频帧率同步方法(0, 1:CFR, 2:VFR)
 #	"$OUTPUT"
 
 ffmpeg \
