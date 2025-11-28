@@ -9,3 +9,6 @@ cp $HOME/.config/i3/config config/i3/config
 
 # update kernel config
 cp /usr/src/linux/.config kernel/config
+
+# update X resources
+cp $HOME/.Xresources X/Xresources

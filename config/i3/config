@@ -38,7 +38,6 @@ tiling_drag modifier titlebar
 # start a terminal
 set $GentooTerm xterm -T GentooTerm -fs 15
 bindsym $mod+Return exec --no-startup-id xterm
-bindsym $mod+Shift+Return exec --no-startup-id xterm -fs 24
 bindsym Ctrl+Return exec --no-startup-id $GentooTerm
 
 # cycle between workspaces

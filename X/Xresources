@@ -10,6 +10,13 @@
 *geometry:91x24
 *locale:true
 *saveLines:4096
+*cursorBlink:true
+*cursorOffTime:600
+*cursorOnTime:1000
+*VT100*translations:#override \n\
+	Ctrl <Key>plus: larger-vt-font() \n\
+	Ctrl <Key>minus: smaller-vt-font() \n\
+	Ctrl <Key>0: set-vt-font(d)
 
 !Theme Nine
 *background:#181818
@@ -71,7 +78,8 @@ Xcursor.theme:Adwaita
 Xcursor.size:16
 
 !Xft.dpi:144
-Xft.lcd:lcddefault
+!Xft.lcd:lcddefault
+Xft.lcd:lcdfilter
 Xft.antialias:true
 Xft.hinting:true
 Xft.rgba:rgb
