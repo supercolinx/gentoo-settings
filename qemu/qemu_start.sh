@@ -7,6 +7,7 @@ then
 	qemu-img create -f qcow2 ${TARGET} 16G
 fi
 
+#TODO use '-usb -device usb-tablet' when '-device virtio-tablet-pci' is not work
 qemu-system-x86_64 \
         -enable-kvm \
         -cpu host,kvm=off \

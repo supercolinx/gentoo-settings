@@ -78,9 +78,8 @@ Xcursor.theme:Adwaita
 Xcursor.size:16
 
 !Xft.dpi:144
-!Xft.lcd:lcddefault
-Xft.lcd:lcdfilter
+Xft.lcd:lcddefault
 Xft.antialias:true
 Xft.hinting:true
 Xft.rgba:rgb
-Xft.hintstyle:hintmedium
+Xft.hintstyle:hintslight
