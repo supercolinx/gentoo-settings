@@ -1,7 +1,7 @@
 *termName:xterm-256color
+*renderFont:true
 *faceName:monospace:style=Regular:antialias=true
 *faceSize:15
-*renderFont:true
 *omitTranslation:popup-menu
 *highlightReverse:false
 !*scaleHeight:1.01

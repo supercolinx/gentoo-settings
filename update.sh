@@ -23,3 +23,8 @@ fi
 if [ -f /etc/vim/vimrc.local ]; then
 	cp /etc/vim/vimrc.local vim/vimrc.local
 fi
+
+# update neofetch config
+if [ -f $HOME/.config/neofetch/config.conf ]; then
+	cp $HOME/.config/neofetch/config.conf config/neofetch/config.conf
+fi

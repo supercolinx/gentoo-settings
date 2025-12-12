@@ -1,5 +1,5 @@
 #!/bin/sh
-TARGET=archlinux.qcow2
+TARGET=ubuntu160407.qcow2
 
 if [ ! -f ${TARGET} ]
 then
@@ -7,19 +7,19 @@ then
 	qemu-img create -f qcow2 ${TARGET} 16G
 fi
 
-#TODO use '-usb -device usb-tablet' when '-device virtio-tablet-pci' is not work
 qemu-system-x86_64 \
-        -enable-kvm \
-        -cpu host,kvm=off \
+	-machine type=q35,accel=kvm \
+        -cpu host \
         -m 4G \
-        -smp cores=4 \
+	-smp cpus=4,cores=4 \
+	-vga virtio \
 	-drive file=${TARGET},if=virtio \
-	-display sdl,grab-mod=rctrl \
-	-nic user,hostfwd=tcp::2223-:22 \
+	-display sdl,gl=on,grab-mod=rctrl \
 	-device virtio-keyboard-pci \
-	-device virtio-tablet-pci \
+	-usb -device usb-tablet \
 	-audiodev alsa,id=audio0,out.dev=default,in.dev=default \
 	-device ac97,audiodev=audio0 \
+	-nic user,hostfwd=tcp::2222-:22 \
         $@ &
 
 unset TARGET
