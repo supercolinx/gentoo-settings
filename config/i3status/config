@@ -14,13 +14,12 @@ general {
 
 order += "volume _first_"
 order += "wireless _first_"
-order += "ethernet _first_"
 order += "cpu_temperature 1"
 order += "tztime local"
 
 volume _first_ {
-	format = "♪%volume"
-	format_muted = "♪(%volume)"
+	format = "🔔 %volume"
+	format_muted = "🔕 %volume"
 	device = "default"
 	mixer = "Speaker"
 	#mixer = "PCM"
@@ -29,21 +28,16 @@ volume _first_ {
 }
 
 wireless _first_ {
-        format_up = "%quality %essid[%bitrate/%frequency]"
-        format_down = ""
-}
-
-ethernet _first_ {
-        format_up = "Ethernet[%speed]"
+        format_up = "🪩%quality %essid[%bitrate/%frequency]"
         format_down = ""
 }
 
 cpu_temperature 1 {
-	format = "T:%degrees°C"
+	format = "🔥 %degrees°C"
 	path=/sys/class/thermal/thermal_zone1/temp
 	max_threshold = 52
 }
 
 tztime local {
-        format = "%Y-%m-%d %a %H:%M:%S"
+        format = "⏰ %Y-%m-%d %a %H:%M:%S G̵͎̺͌͛̔͜e̴̼͕̺̾͋͑n̴̫͎͇̾͆͝t̴̘͖́̈́̒͜o̸̼̙̪͛̚ö̸̟̻̘́͋͝ "
 }

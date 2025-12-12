@@ -9,6 +9,11 @@ if [ -f $HOME/.config/i3/config ]; then
 	cp $HOME/.config/i3/config config/i3/config
 fi
 
+# update i3status config
+if [ -f $HOME/.config/i3status/config ]; then
+	cp $HOME/.config/i3status/config config/i3status/config
+fi
+
 # update kernel config
 if [ -f /usr/src/linux/.config ]; then
 	cp /usr/src/linux/.config kernel/config
