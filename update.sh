@@ -33,3 +33,8 @@ fi
 if [ -f $HOME/.config/neofetch/config.conf ]; then
 	cp $HOME/.config/neofetch/config.conf config/neofetch/config.conf
 fi
+
+# update mpv config
+if [ -f $HOME/.config/mpv/mpv.conf ]; then
+	cp $HOME/.config/mpv/mpv.conf config/mpv/mpv.conf
+fi
