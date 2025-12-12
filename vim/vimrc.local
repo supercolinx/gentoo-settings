@@ -1,3 +1,4 @@
+set nocp
 filetype plugin on
 filetype indent on
 
@@ -7,6 +8,8 @@ set previewpopup=height:10,width:60
 set background=dark
 colorscheme habamax
 syntax on
+
+let g:netrw_liststyle = 3
 
 if has("cscope")
 	set csprg=/usr/bin/cscope

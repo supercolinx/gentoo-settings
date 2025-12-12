@@ -14,6 +14,7 @@ general {
 
 order += "volume _first_"
 order += "wireless _first_"
+order += "memory"
 order += "cpu_temperature 1"
 order += "tztime local"
 
@@ -28,8 +29,14 @@ volume _first_ {
 }
 
 wireless _first_ {
-        format_up = "🪩%quality %essid[%bitrate/%frequency]"
+        format_up = "🌐%quality %essid[%bitrate/%frequency]"
         format_down = ""
+}
+
+memory {
+	format = "🥶 %used (%percentage_used)"
+	format_degraded = "🥵 %free (%percentage_free)"
+	threshold_degraded = "10%"
 }
 
 cpu_temperature 1 {

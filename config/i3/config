@@ -107,16 +107,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws0 "0"
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+set $ws0 "0:👻"
+set $ws1 "1:1̸̟͒́͜͠ O̸̫͙̠̓̈́̀N̸͉͔͖͋̈́͘E̴̼̘̼͛̒̓"
+set $ws2 "2:2̸̢͇̪͆̀̚ T̵̟̞͕́̓͝Ẅ̸̺̝̝́͊͝O̸͇̞͖̐̔͘"
+set $ws3 "3:3̵̘̻̼͛͘̚ T̵̺͔͔͆͝H̸̡̝͍̽͛͝R̴̢̘̺͊͝Ë̸͉͎̟́͝E̵̢̼̻͛͛̽"
+set $ws4 "4:4̴̪̙̘̀͆̚ F̸͍͚͙͑̀͠Ó̸̡͍̙͆̓U̴͓͇̝̓͋̚R̸̻̫͉̔̾̈́"
+set $ws5 "5:5̵̢͚̟̽͑͑ F̴͓̝͍̽̽I̵̡̦̟͊̓̐V̸̘̙̦͐͌̈́E̴̞̟͓͑͘̕"
+set $ws6 "6:6̴͚̞̻̈́̿͛ S̸̢̙͚̈́̾̈́Í̴̢̙̦̈́̓X̴͓͚̿̾̕"
+set $ws7 "7:7̵̘͎̾̾ S̴̢͚͖̔̀̚E̵̠̠̦̽̒̚V̵͍͖͒͌̾͜E̴̢͖̟͋͒͊N̸͇̚͜͠͝"
+set $ws8 "8:8̸͉̦͇̽̀̚ E̵̝͍̫͋͋͠I̴͚̠̺͒͌̓G̸̫͖͌͐͌͜H̸̫̝̘̓̐͝T̴̢̈́̚͜"
+set $ws9 "9:9̴̫̠̝̓̚͘ N̸͓̼̼̐͋̈́I̴̪̦̫͋͑̐N̸̝̻͑̐͘͜E̵͍͇͐̔̔"
 
 # switch to workspace
 bindsym $mod+0 workspace number $ws0
@@ -177,6 +177,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	font pango:monospace 9
+	strip_workspace_numbers yes
         status_command i3status
 	tray_output none
 	separator_symbol "\✿/"
