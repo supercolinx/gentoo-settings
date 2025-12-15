@@ -12,11 +12,17 @@ general {
         interval = 5
 }
 
+#order += "read_file UPTIME"
 order += "volume _first_"
 order += "wireless _first_"
-order += "memory"
 order += "cpu_temperature 1"
 order += "tztime local"
+
+#read_file UPTIME {
+#	format = "%content"
+#	format_bad = "%title - %error"
+#	path = "/root/demo"
+#}
 
 volume _first_ {
 	format = "🔔 %volume"
@@ -31,12 +37,6 @@ volume _first_ {
 wireless _first_ {
         format_up = "🌐%quality %essid[%bitrate/%frequency]"
         format_down = ""
-}
-
-memory {
-	format = "🥶 %used (%percentage_used)"
-	format_degraded = "🥵 %free (%percentage_free)"
-	threshold_degraded = "10%"
 }
 
 cpu_temperature 1 {

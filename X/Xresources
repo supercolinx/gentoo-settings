@@ -4,6 +4,9 @@
 *faceSize:15
 *omitTranslation:popup-menu
 *highlightReverse:false
+*bellIsUrgent:false
+*visualBell:false
+*visualBellLine:false
 !*scaleHeight:1.01
 *scrollBar:false
 *selectToClipboard:true

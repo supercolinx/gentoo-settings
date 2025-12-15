@@ -17,9 +17,8 @@ font pango:monospace 9
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-#set $_i3lock i3lock --nofork --beep --image=$HOME/.config/i3status/img.png
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-bindsym Mod4+l exec --no-startup-id i3lock --nofork --color=000000
+#bindsym Mod4+l exec --no-startup-id i3lock --nofork --color=000000
 
 # Use pactl to adjust volume in PulseAudio.
 set $_i3status killall -SIGUSR1 i3status
@@ -36,13 +35,12 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-set $GentooTerm xterm -T GentooTerm -fs 15
 bindsym $mod+Return exec --no-startup-id xterm
-bindsym Ctrl+Return exec --no-startup-id $GentooTerm
-
+bindsym Ctrl+Return exec --no-startup-id xterm -T GentooTerm -fs 15
+ 
 # cycle between workspaces
 bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab worksapce prev
+bindsym $mod+Shift+Tab workspace prev
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -100,23 +98,23 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws0 "0:👻"
-set $ws1 "1:1̸̟͒́͜͠ O̸̫͙̠̓̈́̀N̸͉͔͖͋̈́͘E̴̼̘̼͛̒̓"
-set $ws2 "2:2̸̢͇̪͆̀̚ T̵̟̞͕́̓͝Ẅ̸̺̝̝́͊͝O̸͇̞͖̐̔͘"
-set $ws3 "3:3̵̘̻̼͛͘̚ T̵̺͔͔͆͝H̸̡̝͍̽͛͝R̴̢̘̺͊͝Ë̸͉͎̟́͝E̵̢̼̻͛͛̽"
-set $ws4 "4:4̴̪̙̘̀͆̚ F̸͍͚͙͑̀͠Ó̸̡͍̙͆̓U̴͓͇̝̓͋̚R̸̻̫͉̔̾̈́"
-set $ws5 "5:5̵̢͚̟̽͑͑ F̴͓̝͍̽̽I̵̡̦̟͊̓̐V̸̘̙̦͐͌̈́E̴̞̟͓͑͘̕"
-set $ws6 "6:6̴͚̞̻̈́̿͛ S̸̢̙͚̈́̾̈́Í̴̢̙̦̈́̓X̴͓͚̿̾̕"
-set $ws7 "7:7̵̘͎̾̾ S̴̢͚͖̔̀̚E̵̠̠̦̽̒̚V̵͍͖͒͌̾͜E̴̢͖̟͋͒͊N̸͇̚͜͠͝"
-set $ws8 "8:8̸͉̦͇̽̀̚ E̵̝͍̫͋͋͠I̴͚̠̺͒͌̓G̸̫͖͌͐͌͜H̸̫̝̘̓̐͝T̴̢̈́̚͜"
-set $ws9 "9:9̴̫̠̝̓̚͘ N̸͓̼̼̐͋̈́I̴̪̦̫͋͑̐N̸̝̻͑̐͘͜E̵͍͇͐̔̔"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9:🤡"
 
 # switch to workspace
 bindsym $mod+0 workspace number $ws0
@@ -152,21 +150,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -f 'pango:monospace 20' -t warning -m 'You 
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -177,12 +164,12 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	font pango:monospace 9
-	strip_workspace_numbers yes
-        status_command i3status
-	tray_output none
 	separator_symbol "\✿/"
 	workspace_min_width 52
+	strip_workspace_numbers yes
+	strip_workspace_name yes
+        status_command i3status
+	tray_output none
 }
 
 # ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -200,7 +187,8 @@ bindsym $mod+x exec --no-startup-id xfreerdp ~/.config/freerdp/ubuntu-labtop.rdp
 default_border pixel 3
 default_floating_border pixel 3
 
-exec --no-startup-id ibus-daemon -drx
+focus_follows_mouse no
+
 exec_always --no-startup-id feh -N -z --bg-fill /root/.local/share/backgrounds/default
 
 for_window [all] title_window_icon on
@@ -210,7 +198,7 @@ for_window [class="ffplay"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="dosbox"] floating disable
-for_window [class="xfreerdp"] floating disable, move container to workspace 9
+for_window [class="xfreerdp"] floating disable, move container to workspace 8
 for_window [title="GentooTerm"] floating enable
 for_window [title="QEMU"] floating enable
 for_window [window_role="Organizer"] floating enable

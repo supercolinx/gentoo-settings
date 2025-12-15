@@ -38,3 +38,13 @@ fi
 if [ -f $HOME/.config/mpv/mpv.conf ]; then
 	cp $HOME/.config/mpv/mpv.conf config/mpv/mpv.conf
 fi
+
+# update bashrc.d/99-gentoo-user.bash
+if [ -f /etc/bash/bashrc.d/99-gentoo-user.bash ]; then
+	cp /etc/bash/bashrc.d/99-gentoo-user.bash bashrc.d/99-gentoo-user.bash
+fi
+
+# update dmenu config
+if [ -d /etc/portage/savedconfig/x11-misc ]; then
+	cp -r /etc/portage/savedconfig/x11-misc savedconfig/
+fi

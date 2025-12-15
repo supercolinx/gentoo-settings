@@ -2,14 +2,14 @@ set nocp
 filetype plugin on
 filetype indent on
 
+let g:netrw_liststyle = 3
+
 set colorcolumn=80
 set relativenumber
-set previewpopup=height:10,width:60
+"set previewpopup=height:10,width:60
 set background=dark
 colorscheme habamax
 syntax on
-
-let g:netrw_liststyle = 3
 
 if has("cscope")
 	set csprg=/usr/bin/cscope
@@ -37,8 +37,7 @@ if has("cscope")
 	nmap <C-\>a :cs find a <C-R>=expand("<cword>")<CR><CR>
 endif
 
-autocmd BufNewFile *.c,*.cpp,*.h,*.sh exec ":call SetCopyright()"
-function SetCopyright()
+function! SetCopyright()
 	let l:line = line(".")
 	if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'h'
 		call append(l:line-1,	"/**")
@@ -56,5 +55,6 @@ function SetCopyright()
 	endif
 	normal G
 endfunction
+autocmd BufNewFile *.c,*.cpp,*.h,*.sh exec ":call SetCopyright()"
 
 nnoremap <Space>vm :e /etc/vim/vimrc.local<CR>

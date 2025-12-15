@@ -1,2 +1,1 @@
-# gentoo-settings
-Recording my gentoo settings
+# Gentoo Settings
