@@ -7,6 +7,7 @@
 *bellIsUrgent:false
 *visualBell:false
 *visualBellLine:false
+*sixelScrolling:true
 !*scaleHeight:1.01
 *scrollBar:false
 *selectToClipboard:true

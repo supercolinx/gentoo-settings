@@ -45,6 +45,12 @@ if [ -f /etc/bash/bashrc.d/99-gentoo-user.bash ]; then
 fi
 
 # update dmenu config
-if [ -d /etc/portage/savedconfig/x11-misc ]; then
-	cp -r /etc/portage/savedconfig/x11-misc savedconfig/
+if [ -d /etc/portage/ ]; then
+	rm -r portage/*
+	cp -r /etc/portage/* portage/
+fi
+
+# update xfreerdp config
+if [ -f $HOME/.config/freerdp/ubuntu-labtop.rdp ]; then
+	cp $HOME/.config/freerdp/ubuntu-labtop.rdp freerdp/
 fi

@@ -1,1 +1,2 @@
 net-misc/aria2 adns bittorrent libuv metalink sqlite xmlrpc
+net-misc/freerdp -fuse aad openh264 xv

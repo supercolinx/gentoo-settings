@@ -1,1 +1,1 @@
-app-emulation/qemu sdl QEMU_SOFTMMU_TARGETS: arm aarch64 i386 x86_64 QEMU_USER_TARGETS: x86_64
+app-emulation/qemu sdl virtgl virtfs QEMU_SOFTMMU_TARGETS: arm aarch64 i386 x86_64 QEMU_USER_TARGETS: x86_64

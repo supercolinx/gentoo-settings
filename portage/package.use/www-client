@@ -1,1 +1,2 @@
-www-client/firefox clang hardened hwaccel libproxy openh264
+www-client/firefox hardened hwaccel libproxy openh264
+www-client/w3m imlib
