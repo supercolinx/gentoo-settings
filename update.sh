@@ -52,5 +52,10 @@ fi
 
 # update xfreerdp config
 if [ -f $HOME/.config/freerdp/ubuntu-labtop.rdp ]; then
-	cp $HOME/.config/freerdp/ubuntu-labtop.rdp freerdp/
+	cp -r $HOME/.config/freerdp/* config/freerdp/
+fi
+
+# update etc configs
+if [ -f /etc/environment ]; then
+	cp /etc/environment etc/
 fi

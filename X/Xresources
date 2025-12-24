@@ -1,6 +1,6 @@
 *termName:xterm-256color
 *renderFont:true
-*faceName:monospace:style=Regular:antialias=true
+*faceName:JetBrainsMono:style=Regular:antialias=true
 *faceSize:15
 *omitTranslation:popup-menu
 *highlightReverse:false
@@ -11,7 +11,7 @@
 !*scaleHeight:1.01
 *scrollBar:false
 *selectToClipboard:true
-*geometry:91x24
+*geometry:92x22
 *locale:true
 *saveLines:4096
 *cursorBlink:true

@@ -7,9 +7,8 @@ let g:netrw_liststyle = 3
 set colorcolumn=80
 set relativenumber
 "set previewpopup=height:10,width:60
-set background=dark
 colorscheme habamax
-syntax on
+"autocmd ColorScheme * hi Comment ctermfg=243 ctermbg=NONE cterm=italic
 
 if has("cscope")
 	set csprg=/usr/bin/cscope
@@ -58,3 +57,4 @@ endfunction
 autocmd BufNewFile *.c,*.cpp,*.h,*.sh exec ":call SetCopyright()"
 
 nnoremap <Space>vm :e /etc/vim/vimrc.local<CR>
+syntax on
