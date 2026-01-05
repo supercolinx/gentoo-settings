@@ -4,11 +4,21 @@ filetype indent on
 
 let g:netrw_liststyle = 3
 
+"set cursorline
 set colorcolumn=80
 set relativenumber
 "set previewpopup=height:10,width:60
-colorscheme habamax
-"autocmd ColorScheme * hi Comment ctermfg=243 ctermbg=NONE cterm=italic
+
+if &t_Co >= 256
+	colorscheme habamax
+	"autocmd ColorScheme * hi Comment ctermfg=243 ctermbg=NONE cterm=italic
+	"autocmd ColorScheme * hi CursorLine ctermfg=NONE ctermbg=236 cterm=italic
+	hi Type ctermfg=67 ctermbg=NONE cterm=italic
+	autocmd ColorScheme * hi String ctermfg=71 ctermbg=NONE cterm=italic
+else
+	colorscheme quiet
+endif
+syntax on
 
 if has("cscope")
 	set csprg=/usr/bin/cscope
@@ -57,4 +67,3 @@ endfunction
 autocmd BufNewFile *.c,*.cpp,*.h,*.sh exec ":call SetCopyright()"
 
 nnoremap <Space>vm :e /etc/vim/vimrc.local<CR>
-syntax on

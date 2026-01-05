@@ -1,2 +1,2 @@
-media-video/ffmpeg openh264 opus sdl speex webp x264 x265 v4l xvid
-media-video/mpv -lua -egl -libmpv lcms
+media-video/ffmpeg lcms openh264 opus sdl speex webp x264 x265 v4l xvid
+media-video/mpv -egl -libmpv lcms

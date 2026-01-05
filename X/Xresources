@@ -1,6 +1,6 @@
 *termName:xterm-256color
 *renderFont:true
-*faceName:JetBrainsMono:style=Regular:antialias=true
+*faceName:monospace:style=Regular:antialias=true
 *faceSize:15
 *omitTranslation:popup-menu
 *highlightReverse:false
@@ -11,7 +11,7 @@
 !*scaleHeight:1.01
 *scrollBar:false
 *selectToClipboard:true
-*geometry:92x22
+*geometry:92x24
 *locale:true
 *saveLines:4096
 *cursorBlink:true
@@ -49,7 +49,7 @@
 !Dim: black,red,green,yellow,blue,megenta,cyan,white
 !*background:#181818
 !*foreground:#d8d8d8
-! Normal
+!! Normal
 !*color0:#181818
 !*color1:#ac4242
 !*color2:#ac4242
@@ -58,7 +58,7 @@
 !*color5:#aa759f
 !*color6:#75b5aa
 !*color7:#d8d8d8
-! Bright
+!! Bright
 !*color8:#6b6b6b
 !*color9:#c55555
 !*color10:#aac474
@@ -67,7 +67,7 @@
 !*color13:#c28cb8
 !*color14:#93d3c3
 !*color15:#f8f8f8
-! Dim
+!! Dim
 !*color8:#0f0f0f
 !*color9:#712b2b
 !*color10:#5f6f3a
