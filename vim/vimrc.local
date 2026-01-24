@@ -1,4 +1,3 @@
-set nocp
 filetype plugin on
 filetype indent on
 
@@ -8,6 +7,7 @@ let g:netrw_liststyle = 3
 set colorcolumn=80
 set relativenumber
 "set previewpopup=height:10,width:60
+set clipboard=unnamed
 
 if &t_Co >= 256
 	colorscheme habamax
@@ -28,6 +28,9 @@ if has("cscope")
 	" add any database in current directory
 	if filereadable("cscope.out")
 	    cs add cscope.out
+	    if $CSCOPE_DB != ""
+		    cs add $CSCOPE_DB
+	    endif
 	" else add database pointed to by environment
 	elseif $CSCOPE_DB != ""
 	    cs add $CSCOPE_DB
@@ -48,19 +51,19 @@ endif
 
 function! SetCopyright()
 	let l:line = line(".")
-	if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'h'
-		call append(l:line-1,	"/**")
-		call append(l:line,	" * @file\t".expand("%:p:t"))
-		call append(l:line+1,	" * @author\tColin X")
-		call append(l:line+2,	" * @date\t".strftime("%c"))
-		call append(l:line+3,	" * @description:")
-		call append(l:line+4,	" */")
+	if &filetype == 'c' || &filetype == 'cpp'
+		call append(l:line-1, [
+					\"/**",
+					\" * @file\t".expand("%:t"),
+					\" * @author\tColin X",
+					\" * @date\t".strftime("%c"),
+					\" * @description:", "*/"])
 	elseif &filetype == 'sh'
-		call append(l:line-1,	"#!/bin/sh")
-		call append(l:line,	"# @file\t\t".expand("%:p:t"))
-		call append(l:line+1,	"# @author\tColin X")
-		call append(l:line+2,	"# @data\t\t".strftime("%c"))
-		call append(l:line+3,	"# @description:")
+		call append(l:line-1, ["#/bin/sh",
+					\"# @file\t\t".expand("%:t"),
+					\"# @author\tColin X",
+					\"# @date\t\t".strftime("%c"),
+					\"# @description:"])
 	endif
 	normal G
 endfunction

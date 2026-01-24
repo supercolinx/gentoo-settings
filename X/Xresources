@@ -10,6 +10,7 @@
 *sixelScrolling:true
 !*scaleHeight:1.01
 *scrollBar:false
+*internalColor:
 *selectToClipboard:true
 *geometry:92x24
 *locale:true
@@ -23,8 +24,10 @@
 	Ctrl <Key>0: set-vt-font(d)
 
 !Theme Nine
-*background:#181818
+!*background:#181818
 *foreground:#d8d8d8
+*background:#1c1c1c
+!*foreground:#bcbcbc
 *color0:rgb:00/00/00
 *color1:rgb:9e/18/28
 *color2:rgb:00/88/00
@@ -42,6 +45,7 @@
 *color14:rgb:71/be/be
 *color15:rgb:ff/ff/ff
 *cursorColor:#d8d8d8
+*borderColor:#1c1c1c
 
 !Theme Alacritty
 !Normal: black,red,green,yellow,blue,megenta,cyan,white
@@ -81,6 +85,7 @@
 Xcursor.theme:Adwaita
 Xcursor.size:16
 
+!192=200% 288=%250
 !Xft.dpi:144
 Xft.lcd:lcddefault
 Xft.antialias:true
